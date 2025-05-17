@@ -1,0 +1,13 @@
+split,class,num_images
+train,adenocarcinoma,195
+train,large_cell_carcinoma,115
+train,normal,148
+train,squamous_cell_carcinoma,155
+valid,adenocarcinoma,23
+valid,large_cell_carcinoma,21
+valid,normal,13
+valid,squamous_cell_carcinoma,15
+test,adenocarcinoma,120
+test,large_cell_carcinoma,51
+test,normal,54
+test,squamous_cell_carcinoma,90
