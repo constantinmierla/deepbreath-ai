@@ -79,4 +79,55 @@ Acest proiect își propune să construiască un sistem de **inteligență artif
 
 ---
 
+## ✅ Etapa 3: Dezvoltarea mini-aplicatiei
 
+### 🎨 Interfață cu Streamlit
+Aplicația web folosește Streamlit pentru a permite încărcarea unei imagini CT (`.jpg` sau `.png`) și afișarea rezultatului direct în browser.
+
+---
+
+### 🚀 Flux de lucru
+
+- **Utilizatorul încarcă o imagine CT.**
+- **Aplicația afișează poza încărcată** și un buton **“Diagnostichează”**.
+- La apăsarea butonului, **imaginea este preprocesată** și trimisă către modelul AI.
+- Se afișează dacă **s-a detectat o tumoare** și, dacă da, **tipul acesteia**, împreună cu **gradul de încredere** al predicției.
+
+---
+
+### 📊 Rezultat afișat
+
+- **Dacă o tumoare este prezentă în radiografie** → tipul de tumoră: `[Adenocarcinoma/Large Cell Carcinoma/Squamous Cell Carcinoma]`.
+- **În caz contrar** → se afișează rezultatul **Normal**.
+- **Probabilitatea (în procent)** asociată predicției.
+
+---
+
+## ✅ Etapa 4: Dezvoltarea modelului de AI și evaluarea performanței
+
+### 🏗️ Arhitectura modelului de AI
+
+- Se pornește de la un **ResNet-50 pre-antrenat** pe ImageNet, încărcat cu `include_top=False`.
+-  Peste modelul pre-antrenat, am adăugat (fără a modifica top-ul original):
+  - Un strat Dense de **1024 neuroni**, activare **ReLU**  
+  - Un strat final Dense cu **4 neuroni** (corespunzători claselor _Adenocarcinom, Large-cell, Squamous-cell, Normal_) și activare **softmax**.
+
+---
+
+### ⚙️ Setup
+
+-  **Compilare** cu optimizatorul **Adam** cu un learning rate inițial de `lr = 1×10⁻⁴`.
+-  Am implementat totodată **Early Stopping** și **Reducerea Learning Rate-ului**.
+- **Freeze** la toate straturile ResNet-50; **antrenare doar a head-ului**.
+- **Deblocare completă** (fine-tuning) a întregului model.
+- **Salvare finală** în format Keras `.keras`.
+
+---
+
+### 📈 Metrici de performanță
+
+- **TODO**
+
+---
+
+## ✅ Etapa 5: Viitoare Îmbunătățiri
