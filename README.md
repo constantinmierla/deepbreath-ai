@@ -131,3 +131,11 @@ Aplicația web folosește Streamlit pentru a permite încărcarea unei imagini C
 ---
 
 ## ✅ Etapa 5: Viitoare Îmbunătățiri
+
+- Pentru o acuratețe mai ridicată, primul pas ar fi colectarea unui volum mai mare de date.
+- Extinderea clasificării pentru a include mai multe tipuri de cancer, atât pulmonar, cât și alte forme.
+- Integrarea în sistemul public de sănătate, pentru a eficientiza triajul și gestionarea cazurilor.
+- Implementarea unui modul de interpretabilitate (ex: Grad-CAM) pentru a vizualiza zonele din imagine care au influențat decizia modelului și a oferi feedback radiologilor.
+- Adăugarea unui mecanism de validare continuă a performanței (monitorizare în producție) pentru a detecta degradarea acurateței în timp și a retrena modelul când este necesar.
+- Dezvoltarea unei interfețe multi-utilizator cu roluri diferite (radiolog, medic curant, administrator) și un sistem de audit care să urmărească cine și când accesează rezultatele.
+- Crearea unui sistem de feedback din partea utilizatorilor (radiologi/medici) pentru a marca cazurile eronate și a îmbunătăți constant baza de antrenament.
