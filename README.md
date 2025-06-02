@@ -117,7 +117,9 @@ Aplicația web folosește Streamlit pentru a permite încărcarea unei imagini C
 ### ⚙️ Setup
 
 -  **Compilare** cu optimizatorul **Adam** cu un learning rate inițial de `lr = 1×10⁻⁴`.
--  Am implementat totodată **Early Stopping** și **Reducerea Learning Rate-ului**.
+-  Am implementat totodată **Early Stopping** și **ReduceLROnPlateau**.
+-  Prin **Early Stopping** am monitorizat `val_loss` pentru a oprii antrenarea atunci valoarea nu se imbunataseste, prevenind astfel overfitting-ul.
+-  Prin **ReduceLROnPlateau** , evitam oscilatiile ratei de invatare si ajuta modelul sa converge mai bine spre minimul functiei de cost.
 - **Freeze** la toate straturile ResNet-50; **antrenare doar a head-ului**.
 - **Deblocare completă** (fine-tuning) a întregului model.
 - **Salvare finală** în format Keras `.keras`.
