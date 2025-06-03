@@ -1,0 +1,10 @@
+#!/bin/sh
+'''exec' "/Users/constantinmierla/Informatica/UBB-COMPUTER-SCIENCE/SEMESTRUL 4/INTELIGENTA ARTIFICIALA/LABORATOR/work/proiect/ai-projects-deepbreath-ai/venv/bin/python3.9" "$0" "$@"
+' '''
+# -*- coding: utf-8 -*-
+import re
+import sys
+from tensorboard.main import run_main
+if __name__ == '__main__':
+    sys.argv[0] = re.sub(r'(-script\.pyw|\.exe)?$', '', sys.argv[0])
+    sys.exit(run_main())

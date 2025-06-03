@@ -1,0 +1,10 @@
+timestamp,filename,predicted_class,confidence,adenocarcinoma,large_cell_carcinoma,normal,squamous_cell_carcinoma
+2025-06-03 10:55:36,WhatsApp Image 2025-06-03 at 10.13.48.jpeg,adenocarcinoma,100.0%,1.0000,0.0000,0.0000,0.0000
+2025-06-03 10:57:38,WhatsApp Image 2025-06-03 at 10.14.12 (1).jpeg,large_cell_carcinoma,100.0%,0.0000,1.0000,0.0000,0.0000
+2025-06-03 11:11:53,000109 (4).png,adenocarcinoma,100.0%,1.0000,0.0000,0.0000,0.0000
+2025-06-03 11:12:01,000111.png,large_cell_carcinoma,100.0%,0.0000,1.0000,0.0000,0.0000
+2025-06-03 11:13:09,000114.png,adenocarcinoma,100.0%,1.0000,0.0000,0.0000,0.0000
+2025-06-03 11:13:28,000122.png,large_cell_carcinoma,100.0%,0.0000,1.0000,0.0000,0.0000
+2025-06-03 11:13:44,8.png,normal,100.0%,0.0000,0.0000,1.0000,0.0000
+2025-06-03 11:13:59,000119.png,squamous_cell_carcinoma,100.0%,0.0000,0.0000,0.0000,1.0000
+2025-06-03 11:14:07,000119.png,squamous_cell_carcinoma,100.0%,0.0000,0.0000,0.0000,1.0000
