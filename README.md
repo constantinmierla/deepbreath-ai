@@ -156,4 +156,4 @@ Aplicația web folosește Streamlit pentru a permite încărcarea unei imagini C
 
 ---
 ## ✅ Teaser : https://www.youtube.com/watch?v=Ucdn6Y2v_u8
-
+## ✅ Link Aplicatie : https://deepbreath-ai.streamlit.app/
