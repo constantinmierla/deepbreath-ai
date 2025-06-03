@@ -12,6 +12,16 @@ Acest proiect își propune să construiască un sistem de **inteligență artif
 
 ---
 
+## 🔎 Echipa
+
+| Nume                | Grupa              | 
+|---------------------|--------------------|
+| `Raul Oanea`        | 225                |
+| `Constantin Mierla` | 224                | 
+| `Balahura Vlad`     | 221                | 
+
+---
+
 ## ✅ Etapa 1: Definirea Problemei
 
 ### 🔍 Ce se dă?
@@ -128,7 +138,9 @@ Aplicația web folosește Streamlit pentru a permite încărcarea unei imagini C
 
 ### 📈 Metrici de performanță
 
-- **TODO**
+- **Accuracy**: procentajul de imagini clasificate corect, pe fiecare epocă, atât pe setul de antrenament (`accuracy`) cât și pe cel de validare (`val_accuracy`).
+- **AUC** (Area Under ROC Curve): măsoară capacitatea modelului de a separa clasele (important mai ales dacă datele sunt dezechilibrate). Se afișează ca `auc` (pe antrenament) și `val_auc` (pe validare).
+
 
 ---
 
@@ -141,3 +153,7 @@ Aplicația web folosește Streamlit pentru a permite încărcarea unei imagini C
 - Adăugarea unui mecanism de validare continuă a performanței (monitorizare în producție) pentru a detecta degradarea acurateței în timp și a retrena modelul când este necesar.
 - Dezvoltarea unei interfețe multi-utilizator cu roluri diferite (radiolog, medic curant, administrator) și un sistem de audit care să urmărească cine și când accesează rezultatele.
 - Crearea unui sistem de feedback din partea utilizatorilor (radiologi/medici) pentru a marca cazurile eronate și a îmbunătăți constant baza de antrenament.
+
+---
+## ✅ Teaser : https://www.youtube.com/watch?v=Ucdn6Y2v_u8
+
