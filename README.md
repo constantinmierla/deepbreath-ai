@@ -1,6 +1,9 @@
 
 # 🧠 Sistem Inteligent pentru Diagnosticarea Timpurie a Cancerului Pulmonar
 
+## ✅ Teaser : [https://www.youtube.com/watch?v=Ucdn6Y2v_u8](https://youtu.be/paJ_1DrSZnw)
+## ✅ Link Aplicatie : https://deepbreath-ai.streamlit.app/
+
 ## 📌 Introducere
 
 Cancerul pulmonar este una dintre cele mai agresive forme de cancer, având o rată mare de mortalitate. Detectarea timpurie joacă un rol esențial în șansele de supraviețuire ale pacienților, însă metodele tradiționale de diagnostic bazate pe interpretarea umană a imaginilor CT sunt consumatoare de timp și pot fi predispuse la erori.
@@ -84,8 +87,7 @@ Acest proiect își propune să construiască un sistem de **inteligență artif
 | Folder   | Descriere                  | Procent din set |
 |----------|----------------------------|------------------|
 | `train/` | Imagini pentru antrenare   | 70%              |
-| `valid/` | Imagini pentru validare    | 10%              |
-| `test/`  | Imagini pentru testare     | 20%              |
+| `valid/` | Imagini pentru testare     | 30%              |
 
 ---
 
@@ -155,5 +157,3 @@ Aplicația web folosește Streamlit pentru a permite încărcarea unei imagini C
 - Crearea unui sistem de feedback din partea utilizatorilor (radiologi/medici) pentru a marca cazurile eronate și a îmbunătăți constant baza de antrenament.
 
 ---
-## ✅ Teaser : https://www.youtube.com/watch?v=Ucdn6Y2v_u8
-## ✅ Link Aplicatie : https://deepbreath-ai.streamlit.app/
