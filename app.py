@@ -1,18 +1,17 @@
 import streamlit as st
-import numpy as np
-import cv2
 import csv
 import os
 import pandas as pd
-import matplotlib.pyplot as plt
 from datetime import datetime
 from tensorflow.keras.models import load_model
+from tensorflow.keras.preprocessing.image import ImageDataGenerator
+from utils.utils import *
 
 st.set_page_config(page_title="Clasificare Cancer Pulmonar", layout="wide")
 
 IMG_SIZE = (224, 224)
 CLASS_NAMES = ['adenocarcinoma', 'large_cell_carcinoma', 'normal', 'squamous_cell_carcinoma']
-MODEL_PATH = 'improved_chest_cancer_model.keras'
+MODEL_PATH = 'model/model_nou.keras'
 CSV_PATH = 'predictions.csv'
 
 @st.cache_resource
@@ -21,21 +20,35 @@ def load_chest_cancer_model():
 
 model = load_chest_cancer_model()
 
+@st.cache_resource
+def get_model_metrics():
+    return evaluate_model_metrics(model, './dataset/preprocessed_dataset/valid')
+
+
+accuracy, precision, recall, auc = get_model_metrics()
+
 st.title("🔬 Clasificare Cancer Pulmonar")
+st.markdown(f"#### 📈 Performanțe pe setul de validare:")
+st.markdown(f"- **Acuratețe**: `{accuracy:.2%}`")
+st.markdown(f"- **Precizie**: `{precision:.2%}`")
+st.markdown(f"- **Recall**: `{recall:.2%}`")
+st.markdown(f"- **AUC**: `{auc:.2%}`")
 st.markdown("Încarcă o imagine pentru a detecta automat tipul de cancer pulmonar.")
 
 uploaded_file = st.file_uploader("📤 Încarcă o imagine (JPG/JPEG/PNG)", type=["jpg", "jpeg", "png"])
+
 
 if uploaded_file is not None:
     file_bytes = np.asarray(bytearray(uploaded_file.read()), dtype=np.uint8)
     image = cv2.imdecode(file_bytes, 1)
 
     if image is not None:
-        img = cv2.resize(image, IMG_SIZE)
-        img = img / 255.0
-        input_array = np.expand_dims(img, axis=0)
+        image_resized = cv2.resize(image, IMG_SIZE)
+        input_array = np.expand_dims(image_resized / 255.0, axis=0)
 
         predictions = model.predict(input_array)
+        heatmap = make_gradcam_heatmap(input_array, model, last_conv_layer_name="conv5_block3_out")
+        overlay_img = overlay_gradcam(image, heatmap)
         class_idx = np.argmax(predictions)
         confidence = np.max(predictions)
 
@@ -43,6 +56,9 @@ if uploaded_file is not None:
 
         with col1:
             st.image(image, caption="📷 Imagine încărcată", use_container_width=True)
+            if CLASS_NAMES[class_idx] != 'normal':
+                if st.button("🔍 Afișează Grad-CAM"):
+                    st.image(overlay_img, caption="🔥 Grad-CAM", use_container_width=True)
 
         with col2:
             st.markdown(f"### ✅ Clasă prezisă: `{CLASS_NAMES[class_idx]}`")
@@ -80,7 +96,6 @@ if uploaded_file is not None:
 
         st.success("✅ Predicție salvată în `predictions.csv`")
 
-# === Istoric predicții ===
 if os.path.exists(CSV_PATH):
     st.markdown("### 📁 Istoric ultimele 10 predicții")
     df = pd.read_csv(CSV_PATH)
