@@ -16,8 +16,8 @@ Acest proiect își propune să construiască un sistem de **inteligență artif
 
 | Nume                | Grupa              | 
 |---------------------|--------------------|
+| `Constantin Mierla` | 224                |
 | `Raul Oanea`        | 225                |
-| `Constantin Mierla` | 224                | 
 | `Balahura Vlad`     | 221                | 
 
 ---
@@ -155,5 +155,5 @@ Aplicația web folosește Streamlit pentru a permite încărcarea unei imagini C
 - Crearea unui sistem de feedback din partea utilizatorilor (radiologi/medici) pentru a marca cazurile eronate și a îmbunătăți constant baza de antrenament.
 
 ---
-## ✅ Teaser : https://www.youtube.com/watch?v=Ucdn6Y2v_u8
+## ✅ Teaser : https://www.youtube.com/watch?v=paJ_1DrSZnw
 
