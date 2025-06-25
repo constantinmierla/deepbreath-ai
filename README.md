@@ -1,5 +1,6 @@
 
 # 🧠 Sistem Inteligent pentru Diagnosticarea Timpurie a Cancerului Pulmonar
+## ✅ Teaser : https://www.youtube.com/watch?v=paJ_1DrSZnw
 
 ## 📌 Introducere
 
@@ -155,5 +156,4 @@ Aplicația web folosește Streamlit pentru a permite încărcarea unei imagini C
 - Crearea unui sistem de feedback din partea utilizatorilor (radiologi/medici) pentru a marca cazurile eronate și a îmbunătăți constant baza de antrenament.
 
 ---
-## ✅ Teaser : https://www.youtube.com/watch?v=paJ_1DrSZnw
 
